@@ -1,7 +1,9 @@
+import RootRoute from './RootRoute';
+
 function App() {
   return (
     <>
-      <div>Running Crew Rebuild 🚀</div>;
+      <RootRoute />
     </>
   );
 }
