@@ -1,3 +1,7 @@
+import MyCrewSection from "../../features/home/ui/MyCrewSection";
+import RecommendCrewSection from "../../features/home/ui/RecommendCrewSection";
+import TodayRunCard from "../../features/home/ui/TodayRunCard";
+
 export default function HomePage() {
   return (
     <div className="space-y-6 pt-4">
@@ -7,6 +11,9 @@ export default function HomePage() {
           함께 달리면 더 멀리 갈 수 있어요
         </p>
       </div>
+      <TodayRunCard />
+      <MyCrewSection />
+      <RecommendCrewSection />
     </div>
   );
 }
