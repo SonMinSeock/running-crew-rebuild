@@ -5,7 +5,7 @@ import GlobalLayout from "./components/layout/GlobalLayout";
 import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 import AuthLayout from "./components/layout/AuthLayout";
-import SignUpPage from "./components/pages/SignupPage";
+import SignUpPage from "./components/pages/SignUpPage";
 
 export default function RootRoute() {
   return (

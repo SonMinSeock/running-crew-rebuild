@@ -1,60 +1,29 @@
 import { Lock, Mail } from "lucide-react";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import GoogleIcon from "../ui/icons/GoogleIcon";
-import AuthLogo from "../ui/AuthLogo";
+import AuthHeader from "../ui/auth/AuthHeader";
+import InputField from "../ui/auth/InputField";
+import SocialButton from "../ui/auth/SocialButton";
 
 export default function LoginPage() {
   return (
-    <div className="w-full max-w-sm text-center">
-      {/* 로고 + 타이틀 */}
-      <div className="flex flex-col items-center">
-        <AuthLogo />
+    <div className="w-full max-w-sm space-y-6 text-center">
+      <AuthHeader />
 
-        <h1 className="mt-6 text-2xl font-bold">러닝 크루</h1>
-        <p className="text-muted-foreground mt-2 text-sm">
-          함께 달리면 더 멀리 갈 수 있어요
-        </p>
+      <div className="space-y-4">
+        <InputField placeholder="이메일" icon={Mail} />
+        <InputField type="password" placeholder="비밀번호" icon={Lock} />
       </div>
 
-      {/* 입력폼 */}
-      <div className="mt-8 space-y-4">
-        {/* 이메일 */}
-        <div className="bg-card border-border flex items-center gap-4 rounded-full border px-4 py-3">
-          <Mail className="text-muted-foreground h-5 w-5" />
-          <Input
-            placeholder="이메일"
-            className="border-none bg-transparent p-0 focus-visible:ring-0"
-          />
-        </div>
-
-        {/* 비밀번호 */}
-        <div className="bg-card border-border flex items-center gap-4 rounded-full border px-4 py-3">
-          <Lock className="text-muted-foreground h-5 w-5" />
-          <Input
-            type="password"
-            placeholder="비밀번호"
-            className="border-none bg-transparent p-0 focus-visible:ring-0"
-          />
-        </div>
-      </div>
-
-      {/* 로그인 버튼 */}
-      <Button className="bg-primary text-primary-foreground mt-6 h-12 w-full rounded-full text-sm font-semibold">
+      <Button className="mt-6 h-12 w-full rounded-full text-sm font-semibold">
         로그인
       </Button>
 
-      {/* 빠르게 시작하기 */}
-      <p className="text-muted-foreground mt-6 text-sm">빠르게 시작하기</p>
+      <p className="text-muted-foreground text-sm">빠르게 시작하기</p>
 
-      {/* Google 버튼 */}
-      <button className="bg-card border-border mt-4 flex w-full items-center justify-center gap-2 rounded-full border py-3 text-sm font-medium">
-        <GoogleIcon />
-        <span className="leading-none">Google로 시작하기</span>
-      </button>
+      <SocialButton icon={<GoogleIcon />} label="Google로 시작하기" />
 
-      {/* 회원가입 */}
-      <p className="text-muted-foreground mt-6 text-sm">
+      <p className="text-muted-foreground text-sm">
         계정이 없으신가요?{" "}
         <span className="text-primary cursor-pointer font-medium">
           회원가입

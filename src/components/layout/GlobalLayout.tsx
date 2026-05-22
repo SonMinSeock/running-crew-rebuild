@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../Header";
+import Header from "../ui/Header";
 import Nav from "../ui/Nav";
 
 export default function GlobalLayout() {
