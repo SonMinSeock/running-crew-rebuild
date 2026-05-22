@@ -1,20 +1,21 @@
-import { Lock, Mail, Activity } from "lucide-react";
+import { Lock, Mail } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import GoogleIcon from "../ui/icons/GoogleIcon";
+import AuthLogo from "../ui/AuthLogo";
 
 export default function LoginPage() {
   return (
     <div className="w-full max-w-sm text-center">
-      {/* 로고 */}
-      <div className="bg-primary mx-auto flex h-14 w-14 items-center justify-center rounded-full">
-        <Activity className="h-6 w-6 text-white" />
-      </div>
+      {/* 로고 + 타이틀 */}
+      <div className="flex flex-col items-center">
+        <AuthLogo />
 
-      <h1 className="mt-6 text-2xl font-bold">러닝 크루</h1>
-      <p className="text-muted-foreground mt-2 text-sm">
-        함께 달리면 더 멀리 갈 수 있어요
-      </p>
+        <h1 className="mt-6 text-2xl font-bold">러닝 크루</h1>
+        <p className="text-muted-foreground mt-2 text-sm">
+          함께 달리면 더 멀리 갈 수 있어요
+        </p>
+      </div>
 
       {/* 입력폼 */}
       <div className="mt-8 space-y-4">

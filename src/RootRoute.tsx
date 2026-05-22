@@ -4,8 +4,8 @@ import MemberOnlyLayout from "./components/layout/MemberOnlyLayout";
 import GlobalLayout from "./components/layout/GlobalLayout";
 import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
-import SignUpPage from "./components/pages/SignupPage";
 import AuthLayout from "./components/layout/AuthLayout";
+import SignUpPage from "./components/pages/SignupPage";
 
 export default function RootRoute() {
   return (
