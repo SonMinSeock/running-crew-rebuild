@@ -1,0 +1,7 @@
+import { useThemeStore } from "../stores/themeStore";
+
+export const useTheme = () => useThemeStore((state) => state.theme);
+
+export const useSetTheme = () => useThemeStore((state) => state.setTheme);
+
+export const useToggleTheme = () => useThemeStore((state) => state.toggleTheme);

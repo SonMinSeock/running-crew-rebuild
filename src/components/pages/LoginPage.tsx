@@ -15,7 +15,7 @@ export default function LoginPage() {
         <InputField type="password" placeholder="비밀번호" icon={Lock} />
       </div>
 
-      <Button className="mt-6 h-12 w-full rounded-full text-sm font-semibold">
+      <Button className="mt-6 h-12 w-full cursor-pointer rounded-full text-sm font-semibold">
         로그인
       </Button>
 

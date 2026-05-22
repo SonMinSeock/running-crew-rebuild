@@ -17,7 +17,7 @@ export default function SignUpPage() {
         <InputField type="password" placeholder="비밀번호 확인" icon={Lock} />
       </div>
 
-      <Button className="mt-6 h-12 w-full rounded-full text-sm font-semibold transition-transform active:scale-95">
+      <Button className="mt-6 h-12 w-full cursor-pointer rounded-full text-sm font-semibold transition-transform active:scale-95">
         회원가입
       </Button>
 
