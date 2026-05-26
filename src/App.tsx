@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import RootRoute from "./RootRoute";
+import { initAuth } from "./lib/initAuth";
 
 function App() {
+  useEffect(() => {
+    initAuth();
+  }, []);
+
   const stored = localStorage.getItem("theme-storage");
 
   if (stored) {
