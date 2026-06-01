@@ -1,13 +1,8 @@
 import { useState } from "react";
-
 import { Lock, Mail } from "lucide-react";
-
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
-
 import GoogleIcon from "../ui/icons/GoogleIcon";
-
 import AuthHeader from "../ui/auth/AuthHeader";
 import InputField from "../ui/auth/InputField";
 import SocialButton from "../ui/auth/SocialButton";
@@ -84,9 +79,13 @@ export default function LoginPage() {
 
       <p className="text-muted-foreground text-sm">
         계정이 없으신가요?{" "}
-        <span className="text-primary cursor-pointer font-medium">
+        <Link
+          className="text-primary cursor-pointer font-medium"
+          to={"/signup"}
+          replace
+        >
           회원가입
-        </span>
+        </Link>
       </p>
     </div>
   );

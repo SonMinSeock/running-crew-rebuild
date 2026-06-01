@@ -6,7 +6,7 @@ import SocialButton from "../ui/auth/SocialButton";
 import InputField from "../ui/auth/InputField";
 import { useState } from "react";
 import { useSignup } from "../../hooks/useSignup";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useGoogleLogin } from "../../hooks/useGoogleLogin";
 
 export default function SignUpPage() {
@@ -96,7 +96,13 @@ export default function SignUpPage() {
 
       <p className="text-muted-foreground text-sm">
         이미 계정이 있나요?{" "}
-        <span className="text-primary cursor-pointer font-medium">로그인</span>
+        <Link
+          className="text-primary cursor-pointer font-medium"
+          to="/login"
+          replace
+        >
+          로그인
+        </Link>
       </p>
     </div>
   );
