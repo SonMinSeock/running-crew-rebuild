@@ -4,7 +4,15 @@ import { initAuth } from "./lib/initAuth";
 
 function App() {
   useEffect(() => {
-    initAuth();
+    let unsubscribe: (() => void) | undefined;
+
+    initAuth().then((cleanup) => {
+      unsubscribe = cleanup;
+    });
+
+    return () => {
+      unsubscribe?.();
+    };
   }, []);
 
   const stored = localStorage.getItem("theme-storage");

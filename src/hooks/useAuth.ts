@@ -7,3 +7,5 @@ export const useSession = () => useAuthStore((state) => state.session);
 export const useSetAuth = () => useAuthStore((state) => state.setAuth);
 
 export const useClearAuth = () => useAuthStore((state) => state.clearAuth);
+
+export const useIsAuthLoaded = () => useAuthStore((state) => state.isLoaded);

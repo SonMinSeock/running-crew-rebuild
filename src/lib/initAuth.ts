@@ -6,20 +6,19 @@ export const initAuth = async () => {
   const clearAuth = useAuthStore.getState().clearAuth;
 
   const {
+    data: { subscription },
+  } = supabase.auth.onAuthStateChange((_event, session) => {
+    if (session) setAuth(session);
+    else clearAuth();
+  });
+
+  const {
     data: { session },
+    error,
   } = await supabase.auth.getSession();
 
-  if (session) {
-    setAuth(session);
-  }
-  // 로그인 | 로그아웃 감지
-  supabase.auth.onAuthStateChange((_event, session) => {
-    if (session) {
-      // 로그인
-      setAuth(session);
-    } else {
-      // 로그아웃
-      clearAuth();
-    }
-  });
+  if (error || !session) clearAuth();
+  else setAuth(session);
+
+  return () => subscription.unsubscribe();
 };

@@ -1,8 +1,9 @@
 import type { User, Session } from "@supabase/supabase-js";
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { devtools } from "zustand/middleware";
 
 type AuthStore = {
+  isLoaded: boolean;
   user: User | null;
   session: Session | null;
   setAuth: (session: Session | null) => void;
@@ -10,28 +11,23 @@ type AuthStore = {
 };
 
 export const useAuthStore = create<AuthStore>()(
-  devtools(
-    persist(
-      (set) => ({
-        user: null,
+  devtools((set) => ({
+    isLoaded: false,
+    user: null,
+    session: null,
 
-        session: null,
-
-        setAuth: (session) =>
-          set({
-            session,
-            user: session?.user ?? null,
-          }),
-
-        clearAuth: () =>
-          set({
-            session: null,
-            user: null,
-          }),
+    setAuth: (session) =>
+      set({
+        isLoaded: true,
+        session,
+        user: session?.user ?? null,
       }),
-      {
-        name: "auth-storage",
-      },
-    ),
-  ),
+
+    clearAuth: () =>
+      set({
+        isLoaded: true,
+        session: null,
+        user: null,
+      }),
+  })),
 );

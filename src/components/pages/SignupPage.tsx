@@ -7,17 +7,15 @@ import InputField from "../ui/auth/InputField";
 import { useState } from "react";
 import { useSignup } from "../../hooks/useSignup";
 import { useNavigate } from "react-router-dom";
+import { useGoogleLogin } from "../../hooks/useGoogleLogin";
 
 export default function SignUpPage() {
   const [name, setName] = useState("");
-
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
-
   const [confirmPassword, setConfirmPassword] = useState("");
-
   const { mutate, isPending } = useSignup();
+  const { mutate: googleLogin, isPending: isGooglePending } = useGoogleLogin();
   const navigate = useNavigate();
 
   const handleSignup = () => {
@@ -80,16 +78,21 @@ export default function SignUpPage() {
       </div>
 
       <Button
-        onClick={handleSignup}
-        disabled={isPending}
         className="mt-6 h-12 w-full cursor-pointer rounded-full text-sm font-semibold transition-transform active:scale-95"
+        onClick={handleSignup}
+        disabled={isPending || isGooglePending}
       >
         {isPending ? "가입 중..." : "회원가입"}
       </Button>
 
       <p className="text-muted-foreground text-sm">빠르게 시작하기</p>
 
-      <SocialButton icon={<GoogleIcon />} label="Google로 시작하기" />
+      <SocialButton
+        icon={<GoogleIcon />}
+        label="Google로 시작하기"
+        onClick={() => googleLogin()}
+        disabled={isGooglePending || isPending}
+      />
 
       <p className="text-muted-foreground text-sm">
         이미 계정이 있나요?{" "}
