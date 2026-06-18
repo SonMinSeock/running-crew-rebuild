@@ -6,6 +6,9 @@ import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 import AuthLayout from "./components/layout/AuthLayout";
 import SignupPage from "./components/pages/SignupPage";
+import RunningPage from "./components/pages/RunningPage";
+import FeedPage from "./components/pages/FeedPage";
+import ProfilePage from "./components/pages/ProfilePage";
 
 export default function RootRoute() {
   return (
@@ -20,6 +23,9 @@ export default function RootRoute() {
       <Route element={<GlobalLayout />}>
         <Route element={<MemberOnlyLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/running" element={<RunningPage />} />
+          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Route>
 
