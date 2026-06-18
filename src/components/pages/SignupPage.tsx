@@ -9,7 +9,7 @@ import { useSignup } from "../../hooks/useSignup";
 import { useNavigate, Link } from "react-router-dom";
 import { useGoogleLogin } from "../../hooks/useGoogleLogin";
 
-export default function SignUpPage() {
+export default function SignupPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

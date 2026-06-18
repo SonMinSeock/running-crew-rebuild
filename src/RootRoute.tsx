@@ -5,7 +5,7 @@ import GlobalLayout from "./components/layout/GlobalLayout";
 import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 import AuthLayout from "./components/layout/AuthLayout";
-import SignUpPage from "./components/pages/SignUpPage";
+import SignupPage from "./components/pages/SignupPage";
 
 export default function RootRoute() {
   return (
@@ -13,7 +13,7 @@ export default function RootRoute() {
       <Route element={<AuthLayout />}>
         <Route element={<GuestOnlyLayout />}>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signup" element={<SignupPage />} />
         </Route>
       </Route>
 
